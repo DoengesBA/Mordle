@@ -16,9 +16,8 @@ hr {
 }
 
 #board {
-    width: 300px;
+    width: 350px;
     height: 420px;
-    background-color: red;
     margin: 0 auto;
     margin-top: 3px;
     display: flex;
