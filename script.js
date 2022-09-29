@@ -82,3 +82,43 @@ function update() {
 
     }
 }
+// list of movies to guess
+var search = [
+    "star wars" , "avatar", "jaws" , "lion king" , "indiana jones" , "monty python"
+]
+var movieInfo = ""
+// randomize the poster
+function randomSearch() {
+    var index= Math.floor(Math.random() * 6);
+ getCover(search[index])
+ }
+ 
+// this is the movie game cover API
+
+const app = document.getElementById('root')
+
+const logo = document.createElement('img')
+logo.src = 'logo.png'
+
+const container = document.createElement('div')
+container.setAttribute('class', 'container')
+
+app.appendChild(logo)
+app.appendChild(container)
+
+function getCover (search) {
+    fetch('http://www.omdbapi.com/?apikey=3e99f2a0&t=' + search)
+.then((response) => response.json())
+.then((data) =>{
+    console.log(data)
+    movieInfo = data.Poster
+    console.log(movieInfo)
+    getPoster()
+});
+}
+
+function getPoster (link) {
+const frame=document.createElement('img')
+frame.src = movieInfo
+document.getElementById("board").appendChild(frame)
+}
