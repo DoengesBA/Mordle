@@ -4,12 +4,14 @@ var width = 5; //length of word
 var row = 0; //current guess (attempt #)
 var col = 0; // current letter for that attempt
 
-var gameOver = false;
-var word = "SQUID"
+// list of movies to guess
+var search = [
+    "dumbo" , "rambo", "bambi" , "alien" , "shaft" , "rocky" , "shrek"
+]
 
-window.onload = function() {
-    initialize();
-}
+var gameOver = false;
+
+var word = "" 
 
 function initialize() {
     //Board creation
@@ -20,6 +22,7 @@ function initialize() {
             tile.classList.add("tile");
             tile.innerText = "";
             document.getElementById("board").appendChild(tile)
+            
         }
     }   
     
@@ -59,6 +62,7 @@ function initialize() {
 }
 
 function update() {
+    console.log(word)
     let correct = 0;
     for (let c = 0; c < width; c++) {
         let currTile = document.getElementById(row.toString() + '-' + c.toString());
@@ -81,11 +85,9 @@ function update() {
         }
 
     }
+    console.log(correct)
 }
-// list of movies to guess
-var search = [
-    "star wars" , "avatar", "jaws" , "lion king" , "indiana jones" , "monty python"
-]
+
 var movieInfo = ""
 // randomize the poster
 function randomSearch() {
@@ -103,17 +105,14 @@ logo.src = 'logo.png'
 const container = document.createElement('div')
 container.setAttribute('class', 'container')
 
-app.appendChild(logo)
-app.appendChild(container)
-
 function getCover (search) {
     fetch('http://www.omdbapi.com/?apikey=3e99f2a0&t=' + search)
 .then((response) => response.json())
 .then((data) =>{
-    console.log(data)
+    word = search.toUpperCase()
     movieInfo = data.Poster
-    console.log(movieInfo)
     getPoster()
+    initialize();
 });
 }
 
