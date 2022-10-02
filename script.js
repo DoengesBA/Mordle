@@ -148,5 +148,4 @@ function displayMovieURL(url){
     link.textContent = 'Read about the movie here'
     frame.appendChild(link) 
     document.getElementById('about').appendChild(frame)
-
 }
