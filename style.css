@@ -1,18 +1,22 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-
+    font-family: "Dosis", Helvetica, sans-serif;
 }
 
-hr {
-    width: 500px;
-
+header {
+    width: 100%;
+    height: 100px;
 }
 
-#title {
-    font-size: 36px;
-    font-weight: bold;
-    letter-spacing: 2px;
+header h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    margin-top: 15px;
+}
+
+.poster-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #board {
@@ -22,7 +26,9 @@ hr {
     margin-top: 3px;
     display: flex;
     flex-wrap: wrap;
-
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .tile {
@@ -31,6 +37,7 @@ hr {
     width: 60px;
     height: 60px;
     margin: 2.5px;
+    border-radius: 10px;
 
     /* Text */
     color: black;
@@ -39,34 +46,84 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .correct {
     background-color: #6AAA64;
     color: white;
     border-color: white;
-
 }
 
 .present {
     background-color: #C9B458;
     color: white;
     border-color: white;
-
 }
 
 .absent {
     background-color: #787c7e;
     color: white;
     border-color: white;
-
 }
 
-container {
+.btn-box {
     width: 100%;
     height: 100%;
-    align-self: center;
-    justify-self: center;
-    border: greenyellow;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
+
+.start-btn {
+    background-color: rgb(62, 232, 90);
+    color: azure;
+    border: none;
+    text-decoration: none;
+    height: 50px;
+    width: 175px;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+.start-btn:hover {
+    background-color:rgb(45, 147, 62);
+    transition: 0.2s;
+  }
+
+.reset-btn {
+    background-color: rgb(232, 62, 62);
+    color: azure;
+    border: none;
+    text-decoration: none;
+    height: 50px;
+    width: 125px;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+.reset-btn:hover {
+    background-color:rgb(127, 50, 50);
+    transition: 0.2s;
+  }
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#answer {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+
+

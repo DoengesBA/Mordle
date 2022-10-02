@@ -120,5 +120,5 @@ function getCover (search) {
 function getPoster (link) {
 const frame=document.createElement('img')
 frame.src = movieInfo
-document.getElementById("board").appendChild(frame)
+document.getElementById("poster").appendChild(frame)
 }
