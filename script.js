@@ -4,7 +4,6 @@ var width = 5; //length of word
 var row = 0; //current guess (attempt #)
 var col = 0; // current letter for that attempt
 var startButton = document.querySelector(".start-button"); // button
-
 // list of movies to guess
 var search = [
     "dumbo", "rambo", "bambi", "moana", "shaft", "rocky", "shrek"
@@ -24,7 +23,6 @@ function initialize() {
             tile.innerText = "";
             document.getElementById("board").appendChild(tile);
         }
-
     }
 
     // Listen for key press
@@ -84,7 +82,6 @@ function update() {
         if (correct == width) {
             gameOver = true;
         }
-
     }
     console.log(correct)
 }
@@ -152,4 +149,4 @@ function displayMovieURL(url){
     document.getElementById('about').appendChild(frame)
 }
 
-startButton.addEventListener("click", randomSearch);
+startButton.addEventListener("click", randomSearch); // Start buttons 

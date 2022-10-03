@@ -61,7 +61,7 @@ header h1 {
 }
 
 .absent {
-    background-color: #787c7e;
+    /* background-color: #787c7e; */
     color: white;
     border-color: white;
 }
