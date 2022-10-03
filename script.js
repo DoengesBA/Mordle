@@ -72,6 +72,7 @@ function update() {
         if (word[c] == letter) {
             currTile.classList.add("correct");
             correct += 1;
+            
         } // Is it in the word?
         else if (word.includes(letter)) {
             currTile.classList.add("present");
