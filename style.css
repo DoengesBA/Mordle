@@ -93,9 +93,14 @@ header h1 {
     color: rgb(54, 20, 221);
 }
 
-img {
-    filter: blur(10px);
+ #poster {
+    filter: blur(15px);
 }
+#first {
+    filter: blur(0px);
+}
+
+
 
 
 

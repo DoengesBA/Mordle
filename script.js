@@ -3,6 +3,7 @@ var width = 5; //length of word
 
 var row = 0; //current guess (attempt #)
 var col = 0; // current letter for that attempt
+var startButton = document.querySelector(".start-button"); // button
 
 // list of movies to guess
 var search = [
@@ -21,9 +22,9 @@ function initialize() {
             tile.id = r.toString() + "-" + c.toString();
             tile.classList.add("tile");
             tile.innerText = "";
-            document.getElementById("board").appendChild(tile)
-
+            document.getElementById("board").appendChild(tile);
         }
+
     }
 
     // Listen for key press
@@ -72,7 +73,6 @@ function update() {
         if (word[c] == letter) {
             currTile.classList.add("correct");
             correct += 1;
-            
         } // Is it in the word?
         else if (word.includes(letter)) {
             currTile.classList.add("present");
@@ -94,6 +94,7 @@ var movieInfo = ""
 function randomSearch() {
     var index = Math.floor(Math.random() * 7);
     var term = search[index]
+    startButton.disabled = true;
     getCover(term)
     getReview(term)
 }
@@ -150,3 +151,5 @@ function displayMovieURL(url){
     frame.appendChild(link) 
     document.getElementById('about').appendChild(frame)
 }
+
+startButton.addEventListener("click", randomSearch);
