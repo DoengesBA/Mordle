@@ -107,7 +107,7 @@ const container = document.createElement('div')
 container.setAttribute('class', 'container')
 
 function getCover(search) {
-    fetch('http://www.omdbapi.com/?apikey=3e99f2a0&t=' + search)
+    fetch('https://www.omdbapi.com/?apikey=3e99f2a0&t=' + search)
         .then((response) => response.json())
         .then((data) => {
             word = search.toUpperCase()
